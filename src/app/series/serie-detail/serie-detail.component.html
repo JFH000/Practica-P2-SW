@@ -1,0 +1,8 @@
+<div *ngIf="serie" class="card">
+  <img [src]="serie.poster" class="card-img-top" alt="{{ serie.name }}">
+  <div class="card-body">
+      <h5 class="card-title">{{ serie.name }}</h5>
+      <p class="card-text" style="text-align: justify;">{{ serie.description }}</p>
+      <a [href]="serie.webpage" target="_blank" class="btn btn-primary">Visit webpage</a>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <h1>Lista de Series</h1>
+  <div class="row">
+    <!-- Columna de la tabla -->
+    <div class="col-md-8">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Channel</th>
+            <th>Seasons</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let serie of series" (click)="onSelect(serie)" style="cursor: pointer;">
+            <td>{{ serie.id }}</td>
+            <td>{{ serie.name }}</td>
+            <td>{{ serie.channel }}</td>
+            <td>{{ serie.seasons }}</td>
+          </tr>
+
+        </tbody>
+      </table>
+      <p>Promedio de temporadas: {{ averageSeasons }}</p>
+    </div>
+
+    <!-- Columna del detalle -->
+    <div class="col-md-4">
+      <app-serie-detail *ngIf="selectedSerie" [serie]="selectedSerie"></app-serie-detail>
+    </div>
+  </div>
+</div>
